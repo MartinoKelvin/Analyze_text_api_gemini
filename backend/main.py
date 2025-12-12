@@ -5,10 +5,25 @@ from models import Review
 from schemas import ReviewCreate, ReviewResponse
 from services.sentiment import analyze_sentiment
 from services.keypoints import extract_keypoints
+from fastapi.middleware.cors import CORSMiddleware
 
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
+
+# Tambahkan CORS middleware supaya frontend dapat memanggil API dari dev server
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 def get_db():
     db = SessionLocal()
