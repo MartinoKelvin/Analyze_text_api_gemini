@@ -1,5 +1,11 @@
 # Product Review Analyzer
 
+Tampilan
+
+![1765529096044](image/README/1765529096044.png)![1765529083355](image/README/1765529083355.png)
+
+![1765529096044](image/README/1765529096044.png)
+
 Ringkasan
 
 - Aplikasi fullstack: FastAPI (backend) + React (frontend).
